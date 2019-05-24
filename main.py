@@ -11,6 +11,4 @@ from sources.Account import Account
 
 testAccount = Account("Pawel", "Nowak")
 
-testAccount.print_account_details()
-
 account2 = Account("Natalia", "Cichocka")
