@@ -10,13 +10,15 @@ class Account:
         self.clientLastName = last_name
         self.accountNumber = self.generate_account_number()
         self.balance = balance
+        self.history = [] # will contain operations history
 
     # Implement destructor
     def __del__(self):
         print ("Object destroyed")
 
     def print_account_details(self):
-        print("Owner: {} {}\nAccount Number: {}\nBalance: {}".format(self.clientFirstName, self.clientLastName, self.accountNumber, self.balance))
+        return "Owner: {} {}\nAccount Number: {}\nBalance: {}".format(self.clientFirstName, self.clientLastName,
+                                                                      self.accountNumber, self.balance)
 
     def generate_account_number(self):
         """
