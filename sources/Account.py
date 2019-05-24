@@ -39,7 +39,6 @@ class Account:
 
         return account_number
 
-
-
-
+    def deposit(self, amount):
+        self.balance += amount
 
