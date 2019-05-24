@@ -42,3 +42,13 @@ class Account:
     def deposit(self, amount):
         self.balance += amount
 
+    def withdraw(self, amount):
+        if amount > self.balance:
+            return "Your account balance is not enough"
+        else:
+            self.balance -= amount
+
+            return self.balance
+
+    def show_balance(self):
+        return self.balance
