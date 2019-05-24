@@ -11,6 +11,10 @@ class Account:
         self.accountNumber = self.generate_account_number()
         self.balance = balance
 
+    # Implement destructor
+    def __del__(self):
+        print ("Object destroyed")
+
     def print_account_details(self):
         print("Owner: {} {}\nAccount Number: {}\nBalance: {}".format(self.clientFirstName, self.clientLastName, self.accountNumber, self.balance))
 
