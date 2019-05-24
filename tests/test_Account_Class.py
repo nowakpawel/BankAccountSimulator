@@ -18,4 +18,6 @@ class AccountClassTestCase(TestCase):
         self.assertEqual(self.acc.balance, 0, msg="Balance should 0 when object is initialized")
 
     def test_deposit(self):
-        self.assertEqual(self.acc.balance, 90, msg="Dupa")
+        self.acc.deposit(1000)
+
+        self.assertEqual(self.acc.balance, 1000, msg="Account's balance should be increased")
