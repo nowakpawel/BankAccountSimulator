@@ -3,11 +3,19 @@ from unittest import TestCase
 
 
 class AccountClassTestCase(TestCase):
+
     def setUp(self):
         self.acc = Account("Test", "Testowy")
 
     def tearDown(self):
         self.acc.__del__()
+
+    """===================================== TEST =========================================="""
+
+    def test_print_account_details(self):
+        print ("Running " + self._testMethodName)
+        self.assertEqual(self.acc.print_account_details(), "Owner: Test Testowy\nAccount Number: " +
+                         self.acc.accountNumber + "\nBalance: 0", msg="Details must match")
 
     def test_generate_account_number(self):
         account_number = self.acc.generate_account_number()
