@@ -7,11 +7,10 @@ class AccountClassTestCase(TestCase):
         self.acc = Account("Test", "Testowy")
 
     def tearDown(self):
-        print("Tests completed")
+        self.acc.__del__()
 
     def test_generate_account_number(self):
         account_number = self.acc.generate_account_number()
-
         self.assertEqual(len(account_number), 24, msg="Account is not exactly 24 length.")
 
     def test_balance(self):
