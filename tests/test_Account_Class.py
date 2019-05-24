@@ -14,5 +14,8 @@ class AccountClassTestCase(TestCase):
 
         self.assertEqual(len(account_number), 24, msg="Account is not exactly 24 length.")
 
+    def test_balance(self):
+        self.assertEqual(self.acc.balance, 0, msg="Balance should 0 when object is initialized")
+
     def test_deposit(self):
         self.assertEqual(self.acc.balance, 90, msg="Dupa")
