@@ -23,6 +23,10 @@ class AccountClassTestCase(TestCase):
     def test_withdraw_empty_balance(self):
         self.assertEqual(self.acc.withdraw(1000), "Your account balance is not enough", msg="Should not be possibility to withdraw.")
 
+    def test_withdraw(self):
+        self.acc.deposit(5000)
+        self.assertEqual(self.acc.withdraw(200.50), 4799.50, msg="Withdraw should be possible")
+
     def test_show_balance(self):
         self.acc.deposit(2500.55)
         self.assertEqual(self.acc.show_balance(), 2500.55, msg="Method should show current account balance.")
