@@ -12,9 +12,7 @@ class Account:
         self.balance = balance
         self.history = [] # will contain operations history
 
-    # Implement destructor
-    def __del__(self):
-        print ("Object destroyed")
+
 
     def print_account_details(self):
         return "Owner: {} {}\nAccount Number: {}\nBalance: {}".format(self.clientFirstName, self.clientLastName,
