@@ -12,10 +12,6 @@ class Account:
         self.balance = balance
         self.history = [] # will contain operations history
 
-    # def print_account_details(self):
-    #     return "Owner: {} {}\nAccount Number: {}\nBalance: {}".format(self.clientFirstName, self.clientLastName,
-    #                                                                   self.accountNumber, self.balance)
-
     def generate_account_number(self):
         """
         Assumptions:
@@ -37,22 +33,8 @@ class Account:
 
         return account_number
 
-    def deposit(self, amount):
-        self.balance += amount
 
-    def withdraw(self, amount):
-        if amount > self.balance:
-            return "Your account balance is not enough"
-        else:
-            self.balance -= amount
-
-            return self.balance
-
-    def show_balance(self):
-        return self.balance
-
-
-class Client():
+class Client:
     def __init__(self, first_name, last_name):
         self._first_name = first_name
         self._last_name = last_name
@@ -61,3 +43,21 @@ class Client():
     def print_details(self):
         return "Name: {}\nLast Name: {}\nAccount Number: {}\nBalance: {}".format(self._first_name, self._last_name, self._account.accountNumber, self._account.balance)
 
+    def deposit(self, amount):
+        self._account.balance += amount
+
+        return True
+
+    def balance(self):
+        return self._account.balance
+
+    def deposit(self, amount):
+        self._account.balance += amount
+
+    def withdraw(self, amount):
+        if amount > self._account.balance:
+            return "Your account balance is not enough"
+        else:
+            self._account.balance -= amount
+
+            return self._account.balance
