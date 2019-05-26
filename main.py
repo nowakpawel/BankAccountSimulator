@@ -6,14 +6,20 @@ e-mail: kontakt.nowakpawel@gmail.com
 
 """
 
-from sources.Core import Client
+from sources.Application import Application
 
-client = Client("Pawel", "Nowak")
-print(client.print_details())
+running = True
 
-client.deposit(1000)
+while running:
+    Application.print_actions()
 
-print(client.print_details())
+    choose = int(input("Choose action\t"))
+
+    if choose == sorted(Application.action_list.keys())[-1]:
+        print("Good Bye")
+        running = False
+
+    Application.perform(choose)
 
 
 
