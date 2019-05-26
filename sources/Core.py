@@ -5,18 +5,16 @@ class Account:
 
     accounts_list = []
 
-    def __init__(self, first_name, last_name, balance = 0):
+    def __init__(self, first_name, last_name, balance=0):
         self.clientFirstName = first_name
         self.clientLastName = last_name
         self.accountNumber = self.generate_account_number()
         self.balance = balance
         self.history = [] # will contain operations history
 
-
-
-    def print_account_details(self):
-        return "Owner: {} {}\nAccount Number: {}\nBalance: {}".format(self.clientFirstName, self.clientLastName,
-                                                                      self.accountNumber, self.balance)
+    # def print_account_details(self):
+    #     return "Owner: {} {}\nAccount Number: {}\nBalance: {}".format(self.clientFirstName, self.clientLastName,
+    #                                                                   self.accountNumber, self.balance)
 
     def generate_account_number(self):
         """
@@ -52,3 +50,14 @@ class Account:
 
     def show_balance(self):
         return self.balance
+
+
+class Client():
+    def __init__(self, first_name, last_name):
+        self._first_name = first_name
+        self._last_name = last_name
+        self._account = Account(first_name, last_name)
+
+    def print_details(self):
+        return "Name: {}\nLast Name: {}\nAccount Number: {}\nBalance: {}".format(self._first_name, self._last_name, self._account.accountNumber, self._account.balance)
+

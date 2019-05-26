@@ -1,12 +1,12 @@
-from sources.Account import Account
+from sources.Core import Account
 import unittest
 
 
 class AccountClassTestCase(unittest.TestCase):
 
-    @classmethod
-    def setUpClass(cls):
-        print("\n\n============ Running tests: ============\n\n")
+    # @classmethod
+    # def setUpClass(cls):
+    #     print("\n\n============ Running tests: ============\n\n")
 
     @classmethod
     def tearDownClass(cls):
@@ -15,15 +15,13 @@ class AccountClassTestCase(unittest.TestCase):
     def setUp(self):
         self.acc = Account("Test", "Testowy")
 
-
-
     """===================================== TEST =========================================="""
 
-    def test_print_account_details(self):
-        print ("Running " + self._testMethodName + "...", end="")
-        self.assertEqual(self.acc.print_account_details(), "Owner: Test Testowy\nAccount Number: " +
-                         self.acc.accountNumber + "\nBalance: 0", msg="Details must match")
-        print("OK")
+    # def test_print_account_details(self):
+    #     print ("Running " + self._testMethodName + "...", end="")
+    #     self.assertEqual(self.acc.print_account_details(), "Owner: Test Testowy\nAccount Number: " +
+    #                      self.acc.accountNumber + "\nBalance: 0", msg="Details must match")
+    #     print("OK")
 
     def test_generate_account_number(self):
         print ("Running " + self._testMethodName + "...", end="")

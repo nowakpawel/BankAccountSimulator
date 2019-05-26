@@ -6,9 +6,11 @@ e-mail: kontakt.nowakpawel@gmail.com
 
 """
 
+from sources.Core import Client
 
-from sources.Account import Account
+client = Client("Pawel", "Nowak")
+print(client.print_details())
 
-testAccount = Account("Pawel", "Nowak")
 
-account2 = Account("Natalia", "Cichocka")
+
+
