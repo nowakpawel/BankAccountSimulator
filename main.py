@@ -19,6 +19,10 @@ while running:
         print("Good Bye")
         running = False
 
+    if choose == 0 or choose > len(Application.action_list):
+        print("Wrong option")
+        continue
+
     Application.perform(choose)
 
 
